@@ -7,7 +7,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+const cors = require('cors');
+app.use(cors({
+  origin: ['https://social-media-three-blond.vercel.app'],
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
