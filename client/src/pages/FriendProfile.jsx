@@ -14,7 +14,7 @@ const FriendProfile = ({ user }) => {
   useEffect(() => {
     const getUserDetails = async () => {
       try {
-        const res = await axios.get(`/api/users/profile/${username}`);
+        const res = await axios.get(`https://social-media-3qeu.onrender.com/api/users/profile/${username}`);
         setUserProfile(res.data);
 
         setPosts(res.data.posts || []);
@@ -33,8 +33,8 @@ const FriendProfile = ({ user }) => {
   const handleFollowToggle = async () => {
     try {
       const url = isFollowing
-        ? `/api/users/unfollow/${userProfile._id}`
-        : `/api/users/follow/${userProfile._id}`;
+        ? `https://social-media-3qeu.onrender.com/api/users/unfollow/${userProfile._id}`
+        : `https://social-media-3qeu.onrender.com/api/users/follow/${userProfile._id}`;
 
       const res = await axios.put(url, {}, {
         headers: {

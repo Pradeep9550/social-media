@@ -68,7 +68,7 @@ const CreatePost = ({ isOpen, onClose, user }) => {
     };
 
     const backendRes = await axios.post(
-  '/api/posts', 
+  'https://social-media-3qeu.onrender.com/api/posts', 
   postData,
   {
     headers: {

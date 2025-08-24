@@ -31,7 +31,7 @@ const Register = ({ setUser }) => {
     setLoading(true)
 
     try {
-      const res = await axios.post('/api/auth/register', {
+      const res = await axios.post('https://social-media-3qeu.onrender.com/api/auth/register', {
         username,
         email,
         fullName,

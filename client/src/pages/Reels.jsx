@@ -15,7 +15,7 @@ const Reels = ({ user }) => {
   useEffect(() => {
     const fetchReels = async () => {
       try {
-        const res = await axios.get('/api/reels', {
+        const res = await axios.get('https://social-media-3qeu.onrender.com/api/reels', {
           headers: {
             Authorization: user.token
           }
@@ -40,7 +40,7 @@ const Reels = ({ user }) => {
 
   const handleLike = async (reelId) => {
     try {
-      await axios.post(`/api/reels/${reelId}/like`, {}, {
+      await axios.post(`https://social-media-3qeu.onrender.com/api/reels/${reelId}/like`, {}, {
         headers: {
           Authorization: user.token
         }
@@ -82,7 +82,7 @@ const Reels = ({ user }) => {
   const handleCommentSubmit = async (reelId) => {
     if (!commentInput.trim()) return
     try {
-      const res = await axios.post(`/api/reels/${reelId}/comment`, {
+      const res = await axios.post(`https://social-media-3qeu.onrender.com/api/reels/${reelId}/comment`, {
         text: commentInput
       }, {
         headers: {

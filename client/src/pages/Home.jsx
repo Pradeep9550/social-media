@@ -12,7 +12,7 @@ const Home = ({ user }) => {
  useEffect(() => {
   const fetchPosts = async () => {
     try {
-      const res = await axios.get('/api/posts/feed', {
+      const res = await axios.get('https://social-media-3qeu.onrender.com/api/posts/feed', {
         headers: {
           Authorization: user.token 
         }
@@ -32,7 +32,7 @@ const Home = ({ user }) => {
 
   const handleLike = async (postId) => {
     try {
-      await axios.put(`/api/posts/${postId}/like`, {}, {
+      await axios.put(`https://social-media-3qeu.onrender.com/api/posts/${postId}/like`, {}, {
         headers: { Authorization: user.token }
       })
 
@@ -57,7 +57,7 @@ const Home = ({ user }) => {
     if (!comment.trim()) return
 
     try {
-      const res = await axios.post(`/api/posts/${postId}/comment`, { text: comment }, {
+      const res = await axios.post(`https://social-media-3qeu.onrender.com/api/posts/${postId}/comment`, { text: comment }, {
         headers: { Authorization: user.token }
       })
 

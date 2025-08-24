@@ -24,7 +24,7 @@ const Login = ({ setUser }) => {
 
   try {
     
-    const res = await axios.post('/api/auth/login', formData)
+    const res = await axios.post('https://social-media-3qeu.onrender.com/api/auth/login', formData)
     const userData = res.data
     localStorage.setItem('user', JSON.stringify(userData))
     setUser(userData)

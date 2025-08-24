@@ -9,7 +9,7 @@ const Search = ({user}) => {
 
     const handleSearchChanger =async (e) =>{
         const value = e.target.value
-        const res = await axios.get(`/api/users/search?query=${value}`);
+        const res = await axios.get(`https://social-media-3qeu.onrender.com/api/users/search?query=${value}`);
         const data = res.data;
         setSearchUsers(data)
     }

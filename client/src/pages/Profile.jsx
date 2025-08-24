@@ -20,14 +20,14 @@ const Profile = ({ user }) => {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const res = await axios.get(`/api/users/profile/${username}`)
+        const res = await axios.get(`https://social-media-3qeu.onrender.com/api/users/profile/${username}`)
         setProfile(res.data)
         setEditForm({
           fullName: res.data.fullName || '',
           bio: res.data.bio || '',
         })
 
-        const postsRes = await axios.get(`/api/posts/user/${res.data._id}`, {
+        const postsRes = await axios.get(`https://social-media-3qeu.onrender.com/api/posts/user/${res.data._id}`, {
           headers: { Authorization: user.token } 
         })
         setPosts(postsRes.data)
@@ -44,7 +44,7 @@ const Profile = ({ user }) => {
   const handleEditSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.put('/api/users/profile', editForm, {
+      const res = await axios.put('https://social-media-3qeu.onrender.com/api/users/profile', editForm, {
         headers: { Authorization: user.token } 
       })
       setProfile({ ...profile, ...res.data })
@@ -76,7 +76,7 @@ const cloudRes = await axios.post(
 
    
     const res = await axios.put(
-      '/api/users/profile/picture',
+      'https://social-media-3qeu.onrender.com/api/users/profile/picture',
       { profilePicture: profilePictureUrl },
       {
         headers: {
@@ -99,7 +99,7 @@ const cloudRes = await axios.post(
     if (!confirmDelete) return
 
     try {
-      await axios.delete(`/api/posts/${postId}`, {
+      await axios.delete(`https://social-media-3qeu.onrender.com/api/posts/${postId}`, {
         headers: { Authorization: user.token }, 
       })
       setPosts((prev) => prev.filter((p) => p._id !== postId))
