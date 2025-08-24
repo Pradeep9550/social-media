@@ -5,7 +5,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'https://social-media-3qeu.onrender.com'
+      '/api': {
+        target : 'https://social-media-3qeu.onrender.com'
+      }
     }
   }
 })
