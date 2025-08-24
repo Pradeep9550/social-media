@@ -7,7 +7,6 @@ dotenv.config();
 
 const app = express();
 
-const cors = require('cors');
 app.use(cors({
   origin: ['https://social-media-three-blond.vercel.app'],
   credentials: true,
@@ -30,10 +29,11 @@ app.use('/api/reels', require('./routes/reels'))
 
 
 
-app.use((err, res) => {
+app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });
 });
+
 
 
 const PORT = process.env.PORT
