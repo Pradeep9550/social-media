@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       { user ? ( <Sidebar user={user} logout={logout} onCreatePost={() => setCreatePostOpen(true)}/>) : null}
-      <div className={`${user ? 'flex-1 md:ml-64' : 'w-full'} p-4 pb-14 md:pb-4`}>
+      <div className={`${user ? 'flex-1 md:ml-64' : 'w-full'} pb-28 md:pb-4`}>
         <Routes>
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/register" element={<Register setUser={setUser} />} />
