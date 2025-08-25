@@ -172,12 +172,12 @@ const Reels = ({ user }) => {
                 <img
                   src={
                     reel.user.profilePicture ||
-                    'https://dummyimage.com/40x40/ccc/fff.png&text=U'
+                    `https://dummyimage.com/40x40/ccc/fff.png&text=${reel.user.username[0]?.toUpperCase()}`
                   }
                   alt={reel.user.username}
                   className="w-8 h-8 rounded-full sm:w-10 sm:h-10 sm:mr-3"
                 />
-                <span className="font-medium sm:text-lg">{reel.user.username}</span>
+                <span className="font-medium sm:text-lg mx-3">{reel.user.username}</span>
               </div>
               <p className="mb-1 text-xs sm:text-sm">{reel.caption}</p>
               {reel.audio && (
